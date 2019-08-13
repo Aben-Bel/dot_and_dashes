@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Game goes here... (coming soon)</title>
+        
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+            <h1>Dots</h1> 
+            <label>
+                Player 1 initial: <input type="text" id="player1" value="A"/>
+            </label>
+            <label>
+                Player 2 initial: <input type="text" id="player2" value="B" />
+            </label>  
+            <label>
+                Grid Size: <input type="text" id="gridSize" value="16"/>
+            </label> 
+            <label>
+                <input type="button" id="start" value="Start Game" />
+            </label> 
+            <label>
+                <input type="button" onclick="document.querySelector('.gameArea').textContent=''" value="Clear Grid" />
+            </label> 
+
+            <p>
+                Current Player: <span id="curPlayer"></span><br/>
+                <span id="scorePlayer1"></span>
+                <span id="scorePlayer2"></span>
+            
+            </p>
+            <hr/>
+            <div class="gameArea">
+                
+            </div>
+            <script src="game.js"></script>
+    </body>
+</html>

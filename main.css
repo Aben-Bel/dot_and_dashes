@@ -1,0 +1,41 @@
+
+
+
+.gameArea{
+    margin: auto;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.row{
+    height: 30px;
+    text-align: center;
+}
+.horizontal-line {
+    margin:0;
+    height: 5px;
+    width: 30px;
+    background-color:#bbb;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.vertical-line {
+    margin:0 5px;
+    height: 30px;
+    width: 5px;
+    background-color: #bbb;
+    display: inline-block;
+}
+.white-space {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 20px;
+}
+.red {
+    background-color: #f00;
+}
