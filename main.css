@@ -1,8 +1,6 @@
 
-
-
 .gameArea{
-    margin: auto;
+    margin: 10px;
 }
 .dot {
     height: 15px;
@@ -39,3 +37,22 @@
 .red {
     background-color: #f00;
 }
+#scorePlayer1{
+    background:lightblue;
+}
+#scorePlayer2{
+    background: lightgreen;
+}
+p {
+    font-size:24px;
+    font-style: bold;
+}
+label {
+    font-size:20px;
+    font-style: bold;
+}
+
+#start, #clear {
+    height: 40px;
+    width: 100px
+  }

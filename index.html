@@ -15,13 +15,13 @@
                 Player 2 initial: <input type="text" id="player2" value="B" />
             </label>  
             <label>
-                Grid Size: <input type="text" id="gridSize" value="16"/>
+                Grid Size: <input type="range" max="32" min="6" id="gridSize" value="16"/>
             </label> 
             <label>
                 <input type="button" id="start" value="Start Game" />
             </label> 
             <label>
-                <input type="button" onclick="document.querySelector('.gameArea').textContent=''" value="Clear Grid" />
+                <input type="button" id="clear" value="Clear Grid" />
             </label> 
 
             <p>
