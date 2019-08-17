@@ -1,6 +1,7 @@
 
 .gameArea{
     margin: 10px;
+    padding: 10px;
 }
 .dot {
     height: 15px;

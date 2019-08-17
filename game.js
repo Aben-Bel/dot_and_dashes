@@ -1,5 +1,15 @@
 (()=>{
+
     const gameArea = document.querySelector(".gameArea");
+    const startButton = document.querySelector("#start");
+    const clearButton = document.querySelector("#clear");
+    const gridSizeInput = document.querySelector("#gridSize");
+    const playerInput1 = document.querySelector("#player1");
+    const playerInput2 = document.querySelector("#player2");
+    const scorePlayer1 = document.querySelector("#scorePlayer1");
+    const scorePlayer2 = document.querySelector("#scorePlayer2");
+    const currentPlayer = document.querySelector('#curPlayer');
+
     let player1Initial;
     let player2Initial;
     let player = '1';
@@ -65,12 +75,12 @@
 
 
             if(player == '1'){
-                document.querySelector('#curPlayer').textContent = player1Initial;
+                currentPlayer.textContent = player1Initial;
             }else{
-                document.querySelector('#curPlayer').textContent = player2Initial;
+                currentPlayer.textContent = player2Initial;
             }
-            document.querySelector("#scorePlayer1").textContent = player1Initial + ' : ' + player1Score;
-            document.querySelector("#scorePlayer2").textContent = player2Initial + ' : ' + player2Score;
+            scorePlayer1.textContent = player1Initial + ' : ' + player1Score;
+            scorePlayer2.textContent = player2Initial + ' : ' + player2Score;
             
             event.target.setAttribute('clickable', false);
         }
@@ -86,19 +96,17 @@
         
     };
 
-    const startButton = ()=>{
+    const start = ()=>{
         clear();
-        player1Initial = document.querySelector("#player1").value[0] || 'A';
-        player2Initial = document.querySelector("#player2").value[0] || 'B';
+        player1Initial = playerInput1.value[0] || 'A';
+        player2Initial = playerInput2.value[0] || 'B';
         player2Initial = (player1Initial == player2Initial ? player2Initial + '2': player2Initial);
-        let size = document.querySelector("#gridSize").value || 16;
-        gridSize =  (size <= 32 ? size :  32);
-
-        document.querySelector('#gridSize').textContent=gridSize;
+        gridSize =  gridSizeInput.value;
+        
         gameArea.style = "background:lightblue";
-        document.querySelector('#curPlayer').textContent = player1Initial;
-        document.querySelector("#scorePlayer1").textContent = player1Initial + ' : ' + player1Score;
-        document.querySelector("#scorePlayer2").textContent = player2Initial + ' : ' + player2Score;
+        currentPlayer.textContent = player1Initial;
+        scorePlayer1.textContent = player1Initial + ' : ' + player1Score;
+        scorePlayer2.textContent = player2Initial + ' : ' + player2Score;
 
         for (let i = 0; i<parseInt(gridSize/2); i++){
             box.push([]);
@@ -176,8 +184,9 @@
 
     clear = ()=>{
         gameArea.textContent  ='';
-        document.querySelector('#scorePlayer1').textContent='';
-        document.querySelector('#scorePlayer2').textContent='';
+        gameArea.style = "background:white";
+        scorePlayer1.textContent='';
+        scorePlayer2.textContent='';
         box = [];
         player = '1';
         player1Score = 0;
@@ -185,9 +194,12 @@
 
     }
 
-    document.querySelector("#start").addEventListener("click",startButton);
-    document.querySelector("#clear").addEventListener("click",clear);
-    document.querySelector("#gridSize").addEventListener("input",startButton);
+    startButton.addEventListener("click",start);
+    clearButton.addEventListener("click",clear);
+    gridSizeInput.addEventListener("input",start);
+    gridSizeInput.max = parseInt(innerWidth/60);
+    gridSizeInput.min = 8;
+
 
 
 })();
