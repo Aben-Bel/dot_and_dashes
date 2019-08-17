@@ -83,6 +83,7 @@
             scorePlayer2.textContent = player2Initial + ' : ' + player2Score;
             
             event.target.setAttribute('clickable', false);
+            event.target.classList.add("noHover");
         }
         
         if(player1Score + player2Score >= Number(gridSize)*(parseInt(gridSize/2) - 1) ){
