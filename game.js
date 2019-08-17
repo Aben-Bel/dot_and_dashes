@@ -179,6 +179,9 @@
         document.querySelector('#scorePlayer1').textContent='';
         document.querySelector('#scorePlayer2').textContent='';
         box = [];
+        player = '1';
+        player1Score = 0;
+        player2Score = 0;
 
     }
 
