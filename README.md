@@ -1,4 +1,4 @@
-# dot_and_dashes
+# dots and boxes
 A game using HTML, CSS and Javascript
 
 For game description visit:
